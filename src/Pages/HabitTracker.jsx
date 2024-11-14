@@ -129,37 +129,32 @@ const HabitTracker = () => {
                                     </td>
                                 ))} 
 
-
-                                <td className='px-4 py-4'>
-                                    <div className='flex justify-center gap-3 items-center'>                                    
-                                        <div className='spaces-y-2'>                                            
-                                            {/* Barra de progreso */}
-                                            <div className='w-full bg-gray-200 rounded h-2.5'>
-                                                <div> 
-                                                    {/* Se muestra la barra progreso azul en funcion del porcentaje de dias completado. Se usa el % para la propiedad width con los dias  */}
-                                                    <div className='bg-blue-500 h-2.5 rounded' style={{width: `${habit.progress.filter(progress => progress).length / habit.progress.length * 100}%`}}></div>
-                                                </div>
-                                            </div>
-                                            
-                                            {/* Tanto por ciento */}
-                                            <div className='text-sm text-gray-500 text-center'>
-                                                {habit.progress.filter(progress => progress).length} / {habit.progress.length} days                                                
-                                            </div>
-
-                                        </div>
-                                        <button
-                                            onClick={() => deleteHabit(habit.id)}
-                                        >
-                                            <FaTrash className='flex items-center w-5 h-5' />
-                                        </button>
-                                    </div>
-
-                                    
-
-
-                                </td>
-
-                            
+{/* Inicio */}
+<td className='px-4 py-4'>
+  <div className='flex justify-center gap-3 items-center'>
+    <div className=''>
+      {/* Barra de progreso */}
+      <div className='w-full bg-gray-200 rounded h-2.5'>
+        <div>
+          {/* Se muestra la barra progreso azul en función del porcentaje de días completado. Se usa el % para la propiedad width con los días */}
+          <div className='bg-blue-500 h-2.5 rounded' style={{width: `${habit.progress.filter(progress => progress).length / habit.progress.length * 100}%`}}></div>
+        </div>
+      </div>
+      
+      {/* Tanto por ciento */}
+      <div className='text-sm text-gray-500 text-center'>
+        {habit.progress.filter(progress => progress).length} / {habit.progress.length} days
+      </div>
+    </div>
+    <button
+      onClick={() => deleteHabit(habit.id)}
+      className='flex items-center justify-center p-2 rounded-full bg-gray-500'
+    >
+      <FaTrash className='text-white'/>
+    </button>
+  </div>
+</td>                            
+{/* Fin */}
                             
                             </tr>
                         ))}
